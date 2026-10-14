@@ -38,6 +38,8 @@ backtest_v2/data/
 *.parquet
 *.pkl
 *.joblib
+ml_rebuild/*
+!ml_rebuild/clean_conviction.pkl
 
 # Generated backtest outputs
 backtest_v2/results/*.csv
@@ -57,7 +59,6 @@ Thumbs.db
 
 # Local deployment details and experimental rebuild workspace
 .aws_patch/
-ml_rebuild/
 executar.txt
 BOT_TRADE_MENU.bat
 APIS BOT.md

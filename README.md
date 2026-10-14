@@ -55,8 +55,9 @@ ficheiros locais.
 - `tools/bot_training_monitor.py` e os ficheiros de `deploy/` destinam-se a
   tarefas agendadas num servidor Linux. Revê e adapta os caminhos, utilizadores
   e servicos systemd ao teu servidor antes de instalar.
-- `ml_rebuild/` contem experiencias e dados de treino/backtest locais; nao e
-  necessario para iniciar o bot.
+- `ml_rebuild/clean_conviction.pkl` e o modelo pre-treinado usado pelo bot.
+  Os restantes scripts experimentais e datasets de treino/backtest nao sao
+  necessarios para executar o bot e ficam fora deste repositorio.
 
 ## Seguranca
 

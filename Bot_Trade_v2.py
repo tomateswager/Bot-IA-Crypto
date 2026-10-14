@@ -8970,7 +8970,12 @@ def _load_clean_conviction():
     _CLEAN_CONV_LOADED = True
     try:
         import joblib as _jl
-        _p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "clean_conviction.pkl")
+        _base_dir = os.path.dirname(os.path.abspath(__file__))
+        _model_paths = [
+            os.path.join(_base_dir, "clean_conviction.pkl"),
+            os.path.join(_base_dir, "ml_rebuild", "clean_conviction.pkl"),
+        ]
+        _p = next((path for path in _model_paths if os.path.isfile(path)), _model_paths[0])
         if os.path.exists(_p):
             _CLEAN_CONV = _jl.load(_p)
             logger.info(
@@ -8978,7 +8983,10 @@ def _load_clean_conviction():
                 f"thr L={_CLEAN_CONV.get('thr_long'):.3f} S={_CLEAN_CONV.get('thr_short'):.3f}"
             )
         else:
-            logger.warning(f"[CLEAN-CONV] ficheiro não encontrado: {_p} — gate usa fallback ML monólito")
+            logger.warning(
+                f"[CLEAN-CONV] ficheiro não encontrado em {_model_paths} — "
+                "gate usa fallback ML monólito"
+            )
     except Exception as _e:
         logger.warning(f"[CLEAN-CONV] erro a carregar: {_e}")
         _CLEAN_CONV = None
