@@ -1,0 +1,40 @@
+{
+  "allow_non_x_results": false,
+  "accept_ai_summaries": false,
+  "extract_symbols_from_text": false,
+  "max_posts": 30,
+  "max_queries_per_run": 2,
+  "max_query_seconds": 30,
+  "queries": [
+    {
+      "name": "btc",
+      "symbols": ["BTC"],
+      "query": "site:x.com/x.com/status (BTC OR bitcoin) latest crypto posts"
+    },
+    {
+      "name": "eth",
+      "symbols": ["ETH"],
+      "query": "site:x.com/x.com/status (ETH OR ethereum) latest crypto posts"
+    },
+    {
+      "name": "sol",
+      "symbols": ["SOL"],
+      "query": "site:x.com/x.com/status (SOL OR solana) latest crypto posts"
+    },
+    {
+      "name": "zec",
+      "symbols": ["ZEC"],
+      "query": "site:x.com/x.com/status (ZEC OR zcash) latest crypto posts"
+    },
+    {
+      "name": "xrp",
+      "symbols": ["XRP"],
+      "query": "site:x.com/x.com/status (XRP OR ripple) latest crypto posts"
+    },
+    {
+      "name": "market_risk",
+      "symbols": ["BTC", "ETH"],
+      "query": "site:x.com/x.com/status (crypto hack OR exploit OR ETF OR SEC OR Binance listing) latest posts"
+    }
+  ]
+}

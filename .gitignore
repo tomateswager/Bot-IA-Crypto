@@ -1,0 +1,63 @@
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+
+# Python/cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+botenv/
+
+# Runtime state and logs
+v13_state/
+state_backups/
+*.log
+*.log.*
+*.err
+bot_logs_*.txt
+virtual_bank.json
+monitored_coins.json
+short_trades.json
+trade_history.json
+learning_state.json
+analyzed_articles.json
+external_x_feed.json
+openclaw_x_sources.json
+*.db
+
+# Large/generated market data and models
+backtest_v2/data/
+*.parquet
+*.pkl
+*.joblib
+
+# Generated backtest outputs
+backtest_v2/results/*.csv
+backtest_v2/results/**/*.csv
+backtest_v2/results/validation/
+!backtest_v2/results/RESULTS_MANIFEST.md
+!backtest_v2/results/invalid_lookahead/README.md
+
+# Local backups and editor noise
+.claude/
+*.bak
+*.bak_*
+*.tmp
+~$*
+.DS_Store
+Thumbs.db
+
+# Local deployment details and experimental rebuild workspace
+.aws_patch/
+ml_rebuild/
+executar.txt
+BOT_TRADE_MENU.bat
+APIS BOT.md

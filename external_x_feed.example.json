@@ -1,0 +1,16 @@
+{
+  "updated_at": "2026-05-19T17:00:00Z",
+  "posts": [
+    {
+      "source": "x",
+      "author": "@example_account",
+      "published_at": "2026-05-19T16:55:00Z",
+      "symbols": ["SOL"],
+      "text": "$SOL funding cooling while spot volume rises; ecosystem announcement expected today.",
+      "url": "https://x.com/example/status/123",
+      "likes": 120,
+      "retweets": 18,
+      "views": 42000
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+[Unit]
+Description=Bot Trade training/log health monitor
+After=network-online.target bot-trade-v2.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/bot
+Environment=PYTHONUNBUFFERED=1
+Environment=BOT_DIR=/home/ubuntu/bot
+ExecStart=/home/ubuntu/bot/venv/bin/python /home/ubuntu/bot/tools/bot_training_monitor.py
+NoNewPrivileges=true
+PrivateTmp=true

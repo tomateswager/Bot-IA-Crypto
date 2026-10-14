@@ -1,0 +1,22 @@
+[Unit]
+Description=OpenClaw X feed collector for Bot Trade v2
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=openclawfeed
+Group=openclawfeed
+WorkingDirectory=/home/openclawfeed
+Environment=PYTHONUNBUFFERED=1
+Environment=PATH=/home/openclawfeed/.openclaw/bin:/home/openclawfeed/.openclaw/tools/node/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+EnvironmentFile=-/home/openclawfeed/openclaw.env
+Environment=OPENCLAW_X_CONFIG=/home/openclawfeed/openclaw_x_sources.json
+Environment=EXTERNAL_X_FEED_FILE=/home/openclawfeed/external_x_feed.json
+ExecStart=/usr/bin/python3 /home/openclawfeed/openclaw_x_collector.py
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/openclawfeed
+RestrictSUIDSGID=true

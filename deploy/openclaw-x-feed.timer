@@ -1,0 +1,12 @@
+[Unit]
+Description=Run OpenClaw X feed collector every 15 minutes
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=15min
+AccuracySec=30s
+Persistent=true
+Unit=openclaw-x-feed.service
+
+[Install]
+WantedBy=timers.target
